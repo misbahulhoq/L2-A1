@@ -73,3 +73,36 @@ console.log(Details.Country);
 ```
 
 # What are some differences between interfaces and types in TypeScript?
+
+type can be used for both primitives and objects.
+
+```ts
+// used for primitive data types.
+type str = string;
+const name: str = "Nobel";
+
+// used for an object type.
+type Person = {
+  name: string;
+  age: number;
+};
+
+const person: Person = {
+  name: "Steve Smith",
+  age: 35,
+};
+```
+
+interface can only be used to define the shape of objects
+
+```ts
+// valid
+interface Person {
+  name: string;
+  age: number;
+}
+const person: Person = {name: "Glenn Maxwell", age: 35}
+
+// not valid
+interface PersonOne = string;
+```
