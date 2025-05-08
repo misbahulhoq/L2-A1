@@ -74,7 +74,7 @@ console.log(Details.Country);
 
 # What are some differences between interfaces and types in TypeScript?
 
-type can be used for both primitives and objects.
+### type can be used for both primitives and non-primitives.
 
 ```ts
 // used for primitive data types.
@@ -93,7 +93,7 @@ const person: Person = {
 };
 ```
 
-interface can only be used to define the shape of objects
+### interface can only be used to define the shape of objects
 
 ```ts
 // valid
@@ -104,5 +104,43 @@ interface Person {
 const person: Person = {name: "Glenn Maxwell", age: 35}
 
 // not valid
-interface PersonOne = string;
+interface PersonOne = string; //gives error
+```
+
+### type can not be declared twice but interface can be declared twice.
+
+Double type declaration will give error but double interface declaration will merge them both.
+
+```ts
+// Person is declared once.
+type Person = {};
+
+// The following delcaration will give error.
+type Person = {}; //gives error.
+
+interface IPerson {
+  name: string;
+}
+interface IPerson {
+  age: number;
+}
+// The two interfaces will get merged and act like as:
+interface IPerson {
+  name: string;
+  age: number;
+}
+```
+
+### type supports union and intersections whereas interface doesn't
+
+Example:
+
+```ts
+type User = { name: string };
+// intersection types
+type Admin = User & { role: "admin" };
+// union types
+type Guest = User | { role: "guest" };
+
+//But intersection doesn't support this two features.
 ```
