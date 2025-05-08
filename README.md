@@ -131,7 +131,7 @@ interface IPerson {
 }
 ```
 
-### type supports union and intersections whereas interface doesn't
+### type supports union and intersections whereas interface doesn't.
 
 Example:
 
@@ -143,4 +143,28 @@ type Admin = User & { role: "admin" };
 type Guest = User | { role: "guest" };
 
 //But intersection doesn't support this two features.
+```
+
+### Interface uses the extend keyword to inherit parent properties whereas type uses union or intersection types to inherit parent properties.
+
+Example:
+
+```ts
+interface Animal {
+  name: string;
+}
+
+// using extends keyword to inherit parent properties
+interface Dog extends Animal {
+  sound: string;
+}
+
+type User = { name: string };
+//using union and intersection types to inherit parent properties.
+// intersection types
+type Admin = User & { role: "admin" };
+// now Admin type has both name and role property required.
+// union types
+type Guest = User | { role: "guest" };
+// now Guest type has one property required (name) and one optional (role)
 ```
