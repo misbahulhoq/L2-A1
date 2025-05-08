@@ -1,3 +1,12 @@
+function formatString(input: string, toUpper?: boolean): string {
+  if (toUpper) {
+    return input.toUpperCase();
+  }
+  return input.toLowerCase();
+}
+
+console.log(formatString("Hello, World!"));
+
 enum Day {
   Monday = "Weekday",
   Tuesday = "Weekday",
