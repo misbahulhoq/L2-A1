@@ -1,8 +1,8 @@
-## What is the use of enums in TypeScript?
+# What is the use of enums in TypeScript?
 
 ### Definition of enum: An enum is a special "class" that represents a group of constants (unchangeable variables).
 
-### Types of enums: There are two types of enums:
+### There are two types of enums:
 
 - string
 - numeric
@@ -71,3 +71,5 @@ console.log(Details.Name);
 // logs "Australia"
 console.log(Details.Country);
 ```
+
+# What are some differences between interfaces and types in TypeScript?
