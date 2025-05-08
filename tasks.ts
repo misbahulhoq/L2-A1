@@ -5,28 +5,17 @@ function formatString(input: string, toUpper?: boolean): string {
   return input.toLowerCase();
 }
 
-// console.log(formatString("Hello, World!"));
-
 function filterByRating(
   items: { title: string; rating: number }[]
 ): { title: string; rating: number }[] {
   return items.filter((item) => item.rating >= 4);
 }
 
-const books = [
-  { title: "Book A", rating: 4.5 },
-  { title: "Book B", rating: 3.2 },
-  { title: "Book C", rating: 5.0 },
-];
-
-// console.log(filterByRating(books));
-
 function concatenateArrays<T>(...arrays: T[][]): T[] {
   const result: T[] = [];
   arrays.map((array) => result.push(...array));
   return result;
 }
-// console.log(concatenateArrays([1, 2], [3, 4], [5]));
 
 class Vehicle {
   private _make: string;
@@ -60,8 +49,6 @@ function processValue(value: string | number): number {
   if (typeof value === "string") return value.length;
   return value * 2;
 }
-//console.log(processValue("hello")); // Output: 5
-//console.log(processValue(10)); // Output: 20
 
 interface Product {
   name: string;
@@ -74,15 +61,6 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
   return products[products.length - 1];
 }
 
-const products = [
-  { name: "Pen", price: 10 },
-  { name: "Notebook", price: 25 },
-  { name: "Bag", price: 50 },
-];
-
-// console.log(getMostExpensiveProduct(products));
-// Output: { name: "Bag", price: 50 }
-
 async function squareAsync(n: number): Promise<number> {
   return new Promise((resolve, reject) => {
     if (n >= 0) {
@@ -94,9 +72,6 @@ async function squareAsync(n: number): Promise<number> {
     }
   });
 }
-
-squareAsync(4).then(console.log); // Output after 1s: 16
-//squareAsync(-3).catch(console.error); // Output: Error: Negative number not allowed
 
 enum Day {
   Monday = "Weekday",
