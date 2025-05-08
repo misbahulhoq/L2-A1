@@ -21,6 +21,13 @@ const books = [
 
 // console.log(filterByRating(books));
 
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+  const result: T[] = [];
+  arrays.map((array) => result.push(...array));
+  return result;
+}
+// console.log(concatenateArrays([1, 2], [3, 4], [5]));
+
 enum Day {
   Monday = "Weekday",
   Tuesday = "Weekday",
