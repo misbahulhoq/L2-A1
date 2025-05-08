@@ -34,11 +34,40 @@ Example:
 
 ```ts
 enum CardinalDirections {
-  North = 1,
+  North = 2,
   East,
   South,
   West,
 }
-console.log(CardinalDirections.North); // logs 1
-console.log(CardinalDirections.West); // logs 4
+console.log(CardinalDirections.North); // logs 2
+console.log(CardinalDirections.West); // logs 5
+```
+
+## Numeric Enums - Fully Initialized
+
+You can assign unique numbers for each item in the enum.
+Example:
+
+```ts
+enum PhoneBook {
+  FriendOne = 1234,
+  FriendTwo = 2345,
+  FriendThree = 4567,
+  FriendFour = 5678,
+}
+console.log(PhoneBook.FriendTwo); // logs 2345
+```
+
+## String Enums
+
+```ts
+enum Details {
+  Name = "Smith",
+  Profession = "Cricketer",
+  Country = "Australia",
+}
+// logs "Smith"
+console.log(Details.Name);
+// logs "Australia"
+console.log(Details.Country);
 ```
