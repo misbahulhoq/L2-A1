@@ -93,7 +93,7 @@ const person: Person = {
 };
 ```
 
-### interface can only be used to define the shape of objects
+### interface can only be used to define the shape of non primitive data types.
 
 ```ts
 // valid
